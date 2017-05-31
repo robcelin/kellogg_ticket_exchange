@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @ticket.errors.any? %>
+  <% @ticket.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Ticket #<%= @ticket.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_ticket/<%= @ticket.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for event_id -->
+      <div class="form-group">
+        <label for="event_id" class="control-label">
+          Event
+        </label>
+
+        <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @ticket.event_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @ticket.user_id %>">
+      </div>
+
+      <!-- Label and input for quantity -->
+      <div class="form-group">
+        <label for="quantity" class="control-label">
+          Quantity
+        </label>
+
+        <input type="text" id="quantity" name="quantity" placeholder="Quantity" class="form-control" value="<%= @ticket.quantity %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @ticket.price %>">
+      </div>
+
+      <!-- Label and input for ticket_type -->
+      <div class="form-group">
+        <label for="ticket_type" class="control-label">
+          Ticket type
+        </label>
+
+        <input type="text" id="ticket_type" name="ticket_type" placeholder="Ticket type" class="form-control" value="<%= @ticket.ticket_type %>">
+      </div>
+
+      <!-- Label and input for contact_method -->
+      <div class="form-group">
+        <label for="contact_method" class="control-label">
+          Contact method
+        </label>
+
+        <input type="text" id="contact_method" name="contact_method" placeholder="Contact method" class="form-control" value="<%= @ticket.contact_method %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Ticket
+      </button>
+      or
+      <a href="/tickets/<%= @ticket.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

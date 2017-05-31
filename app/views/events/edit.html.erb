@@ -1,0 +1,136 @@
+<!-- Validation failure messages -->
+<% if @event.errors.any? %>
+  <% @event.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Event #<%= @event.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_event/<%= @event.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for start_date -->
+      <div class="form-group">
+        <label for="start_date" class="control-label">
+          Start date
+        </label>
+
+        <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @event.start_date %>">
+      </div>
+
+      <!-- Label and input for end_date -->
+      <div class="form-group">
+        <label for="end_date" class="control-label">
+          End date
+        </label>
+
+        <input type="text" id="end_date" name="end_date" placeholder="End date" class="form-control" value="<%= @event.end_date %>">
+      </div>
+
+      <!-- Label and input for start_time -->
+      <div class="form-group">
+        <label for="start_time" class="control-label">
+          Start time
+        </label>
+
+        <input type="text" id="start_time" name="start_time" placeholder="Start time" class="form-control" value="<%= @event.start_time %>">
+      </div>
+
+      <!-- Label and input for end_time -->
+      <div class="form-group">
+        <label for="end_time" class="control-label">
+          End time
+        </label>
+
+        <input type="text" id="end_time" name="end_time" placeholder="End time" class="form-control" value="<%= @event.end_time %>">
+      </div>
+
+      <!-- Label and input for ticket_face_value -->
+      <div class="form-group">
+        <label for="ticket_face_value" class="control-label">
+          Ticket face value
+        </label>
+
+        <input type="text" id="ticket_face_value" name="ticket_face_value" placeholder="Ticket face value" class="form-control" value="<%= @event.ticket_face_value %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @event.address %>">
+      </div>
+
+      <!-- Label and input for event_description -->
+      <div class="form-group">
+        <label for="event_description" class="control-label">
+          Event description
+        </label>
+
+        <textarea id="event_description" name="event_description" placeholder="Event description" class="form-control" rows="3"><%= @event.event_description %></textarea>
+      </div>
+
+      <!-- Label and input for tickets_available -->
+      <div class="form-group">
+        <label for="tickets_available" class="control-label">
+          Tickets available
+        </label>
+
+        <input type="text" id="tickets_available" name="tickets_available" placeholder="Tickets available" class="form-control" value="<%= @event.tickets_available %>">
+      </div>
+
+      <!-- Label and input for campusgroups_url -->
+      <div class="form-group">
+        <label for="campusgroups_url" class="control-label">
+          Campusgroups url
+        </label>
+
+        <input type="text" id="campusgroups_url" name="campusgroups_url" placeholder="Campusgroups url" class="form-control" value="<%= @event.campusgroups_url %>">
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @event.image_url %>">
+      </div>
+
+      <!-- Label and input for event_category -->
+      <div class="form-group">
+        <label for="event_category" class="control-label">
+          Event category
+        </label>
+
+        <input type="text" id="event_category" name="event_category" placeholder="Event category" class="form-control" value="<%= @event.event_category %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @event.name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Event
+      </button>
+      or
+      <a href="/events/<%= @event.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
