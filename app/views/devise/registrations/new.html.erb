@@ -4,11 +4,53 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :image_url %> <br />
+    <%= f.text_field :image_url, autofocus: true %>
+  </div> <br />
+
+  <ul></ul>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <ul></ul>
+
   <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.phone_field :phone, autofocus: true %>
+  </div>
+
+  <ul></ul>
+
+  <div class="field">
+    <%= f.label :slack %><br />
+    <%= f.text_field :slack, autofocus: true %>
+  </div>
+
+    <ul></ul>
+
+  <div class="field">
+    <%= f.label :preferred_contact_method %> <br />
+    <div class="col-lg-2">
+      <select class="form-control" id="preferred_contact_method" name="preferred_contact_method">
+        <option>Email</option>
+        <option>Phone</option>
+        <option>Slack</option>
+      </select>
+    </div> <br />
+  </div> <br />
+
+
+  <div class="field"> <br />
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
