@@ -29,7 +29,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :slack, :presence => true
-  validates :preferred_contact_method, :presence => true
   validates :phone, :numericality => true
   validates :phone, :presence => true
   validates :name, :presence => true

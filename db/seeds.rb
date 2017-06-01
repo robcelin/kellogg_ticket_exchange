@@ -9,7 +9,7 @@
 User.destroy_all
 
 u1 = User.new
-u1.email = "rob.celin@kellogg.northwestern.com"
+u1.email = "rob.celin@kellogg.northwestern.edu"
 u1.phone = "4124913029"
 u1.slack = "rob.celin"
 u1.preferred_contact_method = "slack"
