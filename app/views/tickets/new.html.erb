@@ -71,17 +71,16 @@
       </div>
 
       <!-- Label and input for contact_method -->
-      <div class="form-group">
+      <!--<div class="form-group">
         <label for="contact_method" class="control-label">
           Contact method
-        </label>
+        </label>-->
 
-        <dd><%= current_user.preferred_contact_method %></dd>
-        <!--<input type="text" id="contact_method" name="contact_method" placeholder="Contact method" class="form-control" value="<%= @ticket.contact_method %>">-->
+        <input id="contact_method" name="contact_method" type="hidden" value="<%= current_user.preferred_contact_method %>"> </input>
       </div>
 
       <button class="btn btn-success">
-        Create Ticket
+        Create New Ticket
       </button>
       or
       <a href="/tickets">Cancel</a>

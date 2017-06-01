@@ -42,10 +42,10 @@
       <%= f.label :preferred_contact_method %> <br />
     </div>
       <div class="col-lg-2">
-        <select class="form-control" id="preferred_contact_method" name="preferred_contact_method" value="<%= current_user.preferred_contact_method %>">
-          <option>Email</option>
-          <option>Phone</option>
-          <option>Slack</option>
+        <select class="form-control" id="user_preferred_contact_method" name="user[preferred_contact_method]" value="<%= current_user.preferred_contact_method %>">
+          <option name="user[Email]">Email</option>
+          <option name="user[Phone]">Phone</option>
+          <option name="user[Slack]">Slack</option>
         </select>
       </div>
 

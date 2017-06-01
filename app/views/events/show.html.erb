@@ -1,10 +1,15 @@
 <div class="page-header">
-  <h3>Event #<%= @event.id %></h3>
+  <h3><%= @event.name %></h3>
 </div>
 
 <div class="row">
+  <dd><img src="<%= @event.image_url %>" width="100" class="col-md-4 mb-2"></dd>
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
+
+      <dt>Event description</dt>
+      <dd><%= @event.event_description %></dd>
+
       <dt>Start date</dt>
       <dd><%= @event.start_date %></dd>
 
@@ -23,23 +28,16 @@
       <dt>Address</dt>
       <dd><%= @event.address %></dd>
 
-      <dt>Event description</dt>
-      <dd><%= @event.event_description %></dd>
-
       <dt>Tickets available</dt>
-      <dd><%= @event.tickets_available %></dd>
+      <dd><%= @event.tickets.sum(:quantity) %></dd>
 
       <dt>Campusgroups url</dt>
       <dd><%= @event.campusgroups_url %></dd>
 
-      <dt>Image url</dt>
-      <dd><%= @event.image_url %></dd>
-
       <dt>Event category</dt>
       <dd><%= @event.event_category %></dd>
 
-      <dt>Name</dt>
-      <dd><%= @event.name %></dd>
+
   </div>
 </div>
 
@@ -47,25 +45,29 @@
   <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
-      <tr>
+      <tr class="info">
         <th></th>
         <th>Name of Seller</th>
         <th>Quantity</th>
-        <th>Price</th>
+        <th>Price per Ticket</th>
         <th>Type</th>
         <th>Contact Method</th>
       </tr>
+
+      <% @event.tickets.each do |ticket| %>
+      <tr>
+        <th></th>
+        <th><a href="/users/<%= ticket.user_id %>"> <%= ticket.user.name %></a></th>
+        <th><%= ticket.quantity %></th>
+        <th><%= ticket.price %></th>
+        <th><%= ticket.ticket_type %></th>
+        <th><a href="/users/<%= ticket.user_id %>"> <%= ticket.contact_method %></a></th>
+      </tr>
+      <% end %>
+
+    </table>
     </div>
   </div>
-
-  <% @event.tickets.each do |ticket| %>
-  <li class="list-group-item">
-              <a href="/users/<%= ticket.user_id %>">
-                <%= ticket.user_id %>
-              </a>
-            </li>
-          <% end %>
-
 
 </div>
 
