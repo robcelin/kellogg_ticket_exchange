@@ -31,12 +31,14 @@
       <dt>Tickets Available</dt>
       <dd><%= @event.tickets.sum(:quantity) %></dd>
 
+      <dt>Average Listing Price</dt>
+      <dd><%= number_to_currency(@event.tickets.average(:price)) %></dd>
+
       <dt>CampusGroups</dt>
       <dd> <a href="<%= @event.campusgroups_url %>"></dt> CampusGroups Event Page</a> </dd>
 
       <dt>Event Category</dt>
       <dd><%= @event.event_category %></dd>
-
 
   </div>
 </div>

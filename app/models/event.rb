@@ -7,7 +7,6 @@ class Event < ApplicationRecord
   validates :event_description, :presence => true
   validates :end_time, :presence => true
   validates :campusgroups_url, :presence => true
-  validates :campusgroups_url, :uniqueness => true
   validates :address, :presence => true
 
   has_many :tickets, :dependent => :destroy

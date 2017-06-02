@@ -1,6 +1,6 @@
 <div class="page-header">
   <h2 class="text-info">
-    What's Happening at Kellogg?
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Kellogg_School_of_Management.svg/1280px-Kellogg_School_of_Management.svg.png" width="200"> </br>
     <a href="/events/new" class="btn btn-sm btn-info">Add a New Happening!</a>
   </h2>
 </div>
@@ -13,7 +13,8 @@
         <th>Start Time</th>
         <th>End Time</th>
         <th>Face Value</th>
-        <th>Tickets Available</th>
+        <th>Tickets Listed</th>
+        <th>Avg Listing Price</th>
         <th>CampusGroups</th>
         <th>Type</th>
 
@@ -36,6 +37,7 @@
         </td>
         <td><%= number_to_currency(event.ticket_face_value) %></td>
         <td><%= event.tickets.sum(:quantity) %></td>
+        <td><%= number_to_currency(event.tickets.average(:price)) %></td>
         <td><a href="<%= event.campusgroups_url %>"> Click Here </a></td>
 
         <td><%= event.event_category %></td>

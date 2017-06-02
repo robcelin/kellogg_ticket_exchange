@@ -62,7 +62,15 @@
           <strong>Start Date and Time</strong>
         </label>
 
-        <input type="text" id="start_time" name="start_time" placeholder="start time" class="form-control" value="<%= @event.start_time %>">
+        <!--<input type="text" id="start_time" name="start_time" placeholder="start time" class="form-control" value="<%= @event.start_time %>">-->
+
+        <div class='input-group date' id='datetimepicker1'>
+          <input type='text' class="form-control" name="start_time" id="start_time" placeholder="start_time" value="<%= @event.start_time %>">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+
       </div>
 
       <!-- Label and input for end_time -->
@@ -71,7 +79,15 @@
           <strong>End Date and Time</strong>
         </label>
 
-        <input type="text" id="end_time" name="end_time" placeholder="end time" class="form-control" value="<%= @event.end_time %>">
+        <!--<input type="text" id="end_time" name="end_time" placeholder="end time" class="form-control" value="<%= @event.end_time %>">-->
+
+        <div class='input-group date' id='datetimepicker2'>
+          <input type='text' class="form-control" name="end_time" id="end_time" placeholder="end_time" value="<%= @event.end_time %>">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+
       </div>
 
       <!-- Label and input for ticket_face_value -->
@@ -118,3 +134,16 @@
     </form>
   </div>
 </div>
+
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker2').datetimepicker();
+  });
+</script>
