@@ -1,15 +1,15 @@
 <div class="page-header">
-  <h3>Tickets#<%= @ticket.id %></h3>
+  <h3 class="text-info">Tickets #<%= @ticket.id %> for <%= @ticket.event.name %> </h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Event</dt>
-      <dd><%= @ticket.event_id %></dd>
+      <dd><%= @ticket.event.name %></dd>
 
       <dt>User</dt>
-      <dd><%= @ticket.user_id %></dd>
+      <dd><%= @ticket.user.name %></dd>
 
       <dt>Quantity</dt>
       <dd><%= @ticket.quantity %></dd>

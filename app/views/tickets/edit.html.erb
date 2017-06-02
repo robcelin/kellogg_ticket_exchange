@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Ticket #<%= @ticket.id %></h3>
+  <h3 class="text-info">Edit Your Existing Ticket Listing for <%= @ticket.event.name %> </h3>
 </div>
 
 <div class="row">
@@ -20,20 +20,14 @@
 
       <!-- Label and input for event_id -->
       <div class="form-group">
-        <label for="event_id" class="control-label">
-          Event
-        </label>
 
-        <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @ticket.event_id %>">
+        <input type="hidden" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @ticket.event_id %>">
       </div>
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @ticket.user_id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @ticket.user_id %>">
       </div>
 
       <!-- Label and input for quantity -->
@@ -42,7 +36,15 @@
           Quantity
         </label>
 
-        <input type="text" id="quantity" name="quantity" placeholder="Quantity" class="form-control" value="<%= @ticket.quantity %>">
+        <div class="col-md-14">
+          <select class="form-control" id="select" id="quantity" name="quantity" value="<%= @ticket.quantity %>">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
       </div>
 
       <!-- Label and input for price -->
@@ -61,15 +63,6 @@
         </label>
 
         <input type="text" id="ticket_type" name="ticket_type" placeholder="Ticket type" class="form-control" value="<%= @ticket.ticket_type %>">
-      </div>
-
-      <!-- Label and input for contact_method -->
-      <div class="form-group">
-        <label for="contact_method" class="control-label">
-          Contact method
-        </label>
-
-        <input type="text" id="contact_method" name="contact_method" placeholder="Contact method" class="form-control" value="<%= @ticket.contact_method %>">
       </div>
 
       <button class="btn btn-warning">
