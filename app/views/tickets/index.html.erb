@@ -22,7 +22,7 @@
       <tr>
         <td><a href="/events/<%= ticket.event_id %>"><%= ticket.event.name %></td>
         <td><%= ticket.quantity %></td>
-        <td><%= ticket.price %></td>
+        <td><%= number_to_currency(ticket.price) %></td>
         <td><%= ticket.ticket_type %></td>
         <td><%= ticket.contact_method %></td>
         <td>

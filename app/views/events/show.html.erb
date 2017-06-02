@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3><%= @event.name %></h3>
+  <h3 class="text-info"><%= @event.name %></h3>
 </div>
 
 <div class="row">
@@ -11,10 +11,16 @@
       <dd><%= @event.event_description %></dd>
 
       <dt>Start Time</dt>
-      <dd><%= @event.start_time %></dd>
+      <dd>
+        <%= @event.start_time.strftime('%b %e, %Y') %> @
+        <%= @event.start_time.strftime('%l:%M%P') %>
+      </dd>
 
       <dt>End Time</dt>
-      <dd><%= @event.end_time %></dd>
+      <dd>
+        <%= @event.end_time.strftime('%b %e, %Y') %> @
+        <%= @event.end_time.strftime('%l:%M%P') %>
+      </dd>
 
       <dt>Ticket Face Value</dt>
       <dd><%= number_to_currency(@event.ticket_face_value) %></dd>
@@ -22,13 +28,13 @@
       <dt>Address</dt>
       <dd><%= @event.address %></dd>
 
-      <dt>Tickets available</dt>
+      <dt>Tickets Available</dt>
       <dd><%= @event.tickets.sum(:quantity) %></dd>
 
-      <dt>CampusGroups Info</dt>
-      <dd> <a href="<%= @event.campusgroups_url %>"></dt> CampusGroups Event </a> </dd>
+      <dt>CampusGroups</dt>
+      <dd> <a href="<%= @event.campusgroups_url %>"></dt> CampusGroups Event Page</a> </dd>
 
-      <dt>Event category</dt>
+      <dt>Event Category</dt>
       <dd><%= @event.event_category %></dd>
 
 
