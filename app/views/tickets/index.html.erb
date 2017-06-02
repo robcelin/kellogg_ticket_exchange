@@ -1,7 +1,7 @@
 <div class="page-header">
   <h3 class="text-info">
     My Active Ticket Listings
-    <a href="/tickets/new" class="btn btn-md btn-info">Sell a New Ticket</a>
+    <a href="/tickets/new" class="btn btn-sm btn-info">Sell a New Ticket</a>
   </h3>
 </div>
 
@@ -26,8 +26,8 @@
         <td><%= ticket.ticket_type %></td>
         <td><%= ticket.contact_method %></td>
         <td>
-          <a href="/tickets/<%= ticket.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_ticket/<%= ticket.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/tickets/<%= ticket.id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+          <a href="/delete_ticket/<%= ticket.id %>" class="btn btn-sm btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
