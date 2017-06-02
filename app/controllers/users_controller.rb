@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User .find(params[:id])
+    @users = User.find(params[:id])
 
     render("users/show.html.erb")
   end

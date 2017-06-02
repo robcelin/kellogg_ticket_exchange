@@ -3,27 +3,21 @@
 </div>
 
 <div class="row">
-  <dd><img src="<%= @event.image_url %>" width="100" class="col-md-4 mb-2"></dd>
+  <dd><img src="<%= @event.image_url %>" width="100" class="col-md-6 mb-2"> </dd>
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
 
-      <dt>Event description</dt>
+      <dt>Event Description</dt>
       <dd><%= @event.event_description %></dd>
 
-      <dt>Start date</dt>
-      <dd><%= @event.start_date %></dd>
-
-      <dt>End date</dt>
-      <dd><%= @event.end_date %></dd>
-
-      <dt>Start time</dt>
+      <dt>Start Time</dt>
       <dd><%= @event.start_time %></dd>
 
-      <dt>End time</dt>
+      <dt>End Time</dt>
       <dd><%= @event.end_time %></dd>
 
-      <dt>Ticket face value</dt>
-      <dd><%= @event.ticket_face_value %></dd>
+      <dt>Ticket Face Value</dt>
+      <dd><%= number_to_currency(@event.ticket_face_value) %></dd>
 
       <dt>Address</dt>
       <dd><%= @event.address %></dd>
@@ -31,8 +25,8 @@
       <dt>Tickets available</dt>
       <dd><%= @event.tickets.sum(:quantity) %></dd>
 
-      <dt>Campusgroups url</dt>
-      <dd><%= @event.campusgroups_url %></dd>
+      <dt>CampusGroups Info</dt>
+      <dd> <a href="<%= @event.campusgroups_url %>"></dt> CampusGroups Event </a> </dd>
 
       <dt>Event category</dt>
       <dd><%= @event.event_category %></dd>
@@ -40,6 +34,9 @@
 
   </div>
 </div>
+
+
+<h5 class="text-info"> Active Ticket Listings for <%= @event.name %>: </h5>
 
 <div>
   <div class="row">
@@ -59,7 +56,7 @@
         <th></th>
         <th><a href="/users/<%= ticket.user_id %>"> <%= ticket.user.name %></a></th>
         <th><%= ticket.quantity %></th>
-        <th><%= ticket.price %></th>
+        <th><%= number_to_currency(ticket.price) %></th>
         <th><%= ticket.ticket_type %></th>
         <th><a href="/users/<%= ticket.user_id %>"> <%= ticket.contact_method %></a></th>
       </tr>

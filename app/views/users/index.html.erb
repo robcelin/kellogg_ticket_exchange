@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Active User Database</h3>
+</div>
+
+<div>
+  <div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr class="info">
+        <th></th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Slack</th>
+      </tr>
+
+      <% @users.each do |user| %>
+      <tr>
+        <th></th>
+        <th><%= user.name %> </th>
+        <th><%= user.phone %></th>
+        <th><%= user.email %></th>
+        <th><%= user.slack %></th>
+      </tr>
+      <% end %>
+
+    </table>
+    </div>
+  </div>
+
+</div>

@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.where(:user_id => current_user.id)
 
     render("tickets/index.html.erb")
   end
