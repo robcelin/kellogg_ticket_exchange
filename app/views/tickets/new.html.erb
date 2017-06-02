@@ -9,7 +9,8 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Sell a New Ticket</h3>
+  <h3 class="text-info"> Sell a New Ticket Here. </h3>
+
 </div>
 
 <div class="row">
@@ -21,10 +22,17 @@
       <!-- Label and input for event_id -->
       <div class="form-group">
         <label for="event_id" class="control-label">
-          Event
+          <strong>The Happening</strong>
         </label>
 
         <%= select_tag(:event_id, options_from_collection_for_select(Event.all, :id, :name, @ticket.event_id), :class => "form-control") %>
+
+      <ul></ul>
+
+      <p> <em> don't see the happening for the ticket you want to list? </em>
+      <a href="/events/new" class="btn btn-xs btn-default"> Add a New One Here!</a>
+      <p>
+
       </div>
 
       <!-- Label and input for user_id -->
@@ -36,7 +44,7 @@
       <!-- Label and input for quantity -->
       <div class="form-group">
         <label for="quantity" class="control-label">
-          Quantity
+          <strong>Ticket Quantity</strong>
         </label>
 
         <div class="col-md-14">
@@ -55,7 +63,7 @@
       <!-- Label and input for price -->
       <div class="form-group">
         <label for="price" class="control-label">
-          Price
+          <strong>Price per Ticket</strong>
         </label>
 
         <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @ticket.price %>">
@@ -64,10 +72,10 @@
       <!-- Label and input for ticket_type -->
       <div class="form-group">
         <label for="ticket_type" class="control-label">
-          Ticket type
+          <strong>Ticket Type</strong>
         </label>
 
-        <input type="text" id="ticket_type" name="ticket_type" placeholder="Ticket type" class="form-control" value="<%= @ticket.ticket_type %>">
+        <input type="text" id="ticket_type" name="ticket_type" placeholder="enter type of ticket here (e.g., GA, section and seat number, etc.)" class="form-control" value="<%= @ticket.ticket_type %>">
       </div>
 
       <!-- Label and input for contact_method -->

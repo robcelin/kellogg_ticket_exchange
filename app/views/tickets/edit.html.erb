@@ -33,11 +33,11 @@
       <!-- Label and input for quantity -->
       <div class="form-group">
         <label for="quantity" class="control-label">
-          Quantity
+          <strong>Quantity</strong>
         </label>
 
         <div class="col-md-14">
-          <select class="form-control" id="select" id="quantity" name="quantity" value="<%= @ticket.quantity %>">
+          <select class="form-control" id="select" id="quantity" placeholder="quantity" name="quantity" value="<%= @ticket.quantity %>">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -50,7 +50,7 @@
       <!-- Label and input for price -->
       <div class="form-group">
         <label for="price" class="control-label">
-          Price
+          <strong>Price per Ticket</strong>
         </label>
 
         <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @ticket.price %>">
@@ -59,7 +59,7 @@
       <!-- Label and input for ticket_type -->
       <div class="form-group">
         <label for="ticket_type" class="control-label">
-          Ticket type
+          <strong>Ticket Type</strong>
         </label>
 
         <input type="text" id="ticket_type" name="ticket_type" placeholder="Ticket type" class="form-control" value="<%= @ticket.ticket_type %>">

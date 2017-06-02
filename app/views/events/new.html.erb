@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3 class="text-info">Don't See It?  Add a New Kellogg Happening!</h3>
+  <h4 class="text-info">Don't See an Event?  Add a New Kellogg Happening Here to Begin Listing Tickets!</h4>
 </div>
 
 <div class="row">
@@ -18,112 +18,96 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for start_date -->
+
+      <!-- Label and input for name -->
       <div class="form-group">
-        <label for="start_date" class="control-label">
-          Start date
+        <label for="name" class="control-label">
+          <strong>Name</strong>
         </label>
 
-        <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @event.start_date %>">
+        <input type="text" id="name" name="name" placeholder="enter the event name here" class="form-control" value="<%= @event.name %>">
       </div>
 
-      <!-- Label and input for end_date -->
-      <div class="form-group">
-        <label for="end_date" class="control-label">
-          End date
-        </label>
+      <!-- Label and input for event_description -->
+        <div class="form-group">
+          <label for="event_description" class="control-label">
+            <strong>Event Description</strong>
+          </label>
 
-        <input type="text" id="end_date" name="end_date" placeholder="End date" class="form-control" value="<%= @event.end_date %>">
-      </div>
+          <textarea id="event_description" name="event_description" placeholder="add an event description here" class="form-control" rows="3"><%= @event.event_description %></textarea>
+        </div>
+
+        <!-- Label and input for event_category -->
+        <div class="form-group">
+          <label for="event_category" class="control-label">
+            <strong>Event Category</strong>
+          </label>
+
+          <div class="col-md-14">
+            <select class="form-control" id="event_category" id="quantity" name="event_category" value="<%= @event.event_category %>">
+              <option>Social</option>
+              <option>Cultural</option>
+              <option>Professional</option>
+              <option>Sports</option>
+              <option>Concert</option>
+              <option>Academic</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
 
       <!-- Label and input for start_time -->
       <div class="form-group">
         <label for="start_time" class="control-label">
-          Start time
+          <strong>Start Date and Time</strong>
         </label>
 
-        <input type="text" id="start_time" name="start_time" placeholder="Start time" class="form-control" value="<%= @event.start_time %>">
+        <input type="text" id="start_time" name="start_time" placeholder="start time" class="form-control" value="<%= @event.start_time %>">
       </div>
 
       <!-- Label and input for end_time -->
       <div class="form-group">
         <label for="end_time" class="control-label">
-          End time
+          <strong>End Date and Time</strong>
         </label>
 
-        <input type="text" id="end_time" name="end_time" placeholder="End time" class="form-control" value="<%= @event.end_time %>">
+        <input type="text" id="end_time" name="end_time" placeholder="end time" class="form-control" value="<%= @event.end_time %>">
       </div>
 
       <!-- Label and input for ticket_face_value -->
       <div class="form-group">
         <label for="ticket_face_value" class="control-label">
-          Ticket face value
+          <strong>Ticket Face Value</strong>
         </label>
 
-        <input type="text" id="ticket_face_value" name="ticket_face_value" placeholder="Ticket face value" class="form-control" value="<%= @event.ticket_face_value %>">
+        <input type="text" id="ticket_face_value" name="ticket_face_value" placeholder="enter the face value ticket price here" class="form-control" value="<%= @event.ticket_face_value %>">
       </div>
 
       <!-- Label and input for address -->
       <div class="form-group">
         <label for="address" class="control-label">
-          Address
+          <strong>Address</strong>
         </label>
 
-        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @event.address %>">
-      </div>
-
-      <!-- Label and input for event_description -->
-      <div class="form-group">
-        <label for="event_description" class="control-label">
-          Event description
-        </label>
-
-        <textarea id="event_description" name="event_description" placeholder="Event description" class="form-control" rows="3"><%= @event.event_description %></textarea>
-      </div>
-
-      <!-- Label and input for tickets_available -->
-      <div class="form-group">
-        <label for="tickets_available" class="control-label">
-          Tickets available
-        </label>
-
-        <input type="text" id="tickets_available" name="tickets_available" placeholder="Tickets available" class="form-control" value="<%= @event.tickets_available %>">
+        <input type="text" id="address" name="address" placeholder="enter the full address here" class="form-control" value="<%= @event.address %>">
       </div>
 
       <!-- Label and input for campusgroups_url -->
       <div class="form-group">
         <label for="campusgroups_url" class="control-label">
-          Campusgroups url
+          <strong>CampusGroups URL</strong>
         </label>
 
-        <input type="text" id="campusgroups_url" name="campusgroups_url" placeholder="Campusgroups url" class="form-control" value="<%= @event.campusgroups_url %>">
+        <input type="text" id="campusgroups_url" name="campusgroups_url" placeholder="paste the CG link here" class="form-control" value="<%= @event.campusgroups_url %>">
       </div>
 
       <!-- Label and input for image_url -->
       <div class="form-group">
         <label for="image_url" class="control-label">
-          Image url
+          <strong>Image URL</strong>
         </label>
 
-        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @event.image_url %>">
-      </div>
-
-      <!-- Label and input for event_category -->
-      <div class="form-group">
-        <label for="event_category" class="control-label">
-          Event category
-        </label>
-
-        <input type="text" id="event_category" name="event_category" placeholder="Event category" class="form-control" value="<%= @event.event_category %>">
-      </div>
-
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
-
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @event.name %>">
+        <input type="text" id="image_url" name="image_url" placeholder="add the image url here" class="form-control" value="<%= @event.image_url %>">
       </div>
 
       <button class="btn btn-success">
