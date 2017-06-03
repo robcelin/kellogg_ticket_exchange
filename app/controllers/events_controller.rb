@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @q = Event.ransack(params[:q])
 
-    @events = Event.order({:starts_at => :asc})
+    @events = @q.result.order({:starts_at => :asc})
 
     render("events/index.html.erb")
   end
