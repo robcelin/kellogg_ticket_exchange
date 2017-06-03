@@ -27,15 +27,17 @@
           <%= event.name %> </br>
           <img src="<%= event.image_url %>" width="80">
         </td>
-        <td>
-          <%= event.start_time.strftime('%b %e, %Y') %> </br>
-          <%= event.start_time.strftime('%l:%M%P') %>
 
-        </td>
         <td>
-          <%= event.end_time.strftime('%b %e, %Y') %> </br>
-          <%= event.end_time.strftime('%l:%M%P') %>
+          <%= event.starts_at.strftime('%b %e, %Y') %> </br>
+          <%= event.starts_at.strftime('%l:%M%P') %>
         </td>
+
+        <td>
+          <%= event.ends_at.strftime('%b %e, %Y') %> </br>
+          <%= event.ends_at.strftime('%l:%M%P') %>
+        </td>
+
         <td><%= number_to_currency(event.ticket_face_value) %></td>
         <td><%= event.tickets.sum(:quantity) %></td>
         <td><%= number_to_currency(event.tickets.average(:price)) %></td>

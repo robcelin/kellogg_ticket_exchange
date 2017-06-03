@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
+    @events = Event.order({:starts_at => :asc})
+
     render("events/index.html.erb")
   end
 
@@ -24,6 +26,8 @@ class EventsController < ApplicationController
     @event.end_date = params[:end_date]
     @event.start_time = params[:start_time]
     @event.end_time = params[:end_time]
+    @event.starts_at = Chronic.parse(params[:starts_at])
+    @event.ends_at = Chronic.parse(params[:ends_at])
     @event.ticket_face_value = params[:ticket_face_value]
     @event.address = params[:address]
     @event.event_description = params[:event_description]
@@ -55,6 +59,8 @@ class EventsController < ApplicationController
     @event.end_date = params[:end_date]
     @event.start_time = params[:start_time]
     @event.end_time = params[:end_time]
+    @event.starts_at = Chronic.parse(params[:starts_at])
+    @event.ends_at = Chronic.parse(params[:ends_at])
     @event.ticket_face_value = params[:ticket_face_value]
     @event.address = params[:address]
     @event.event_description = params[:event_description]

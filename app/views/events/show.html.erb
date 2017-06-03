@@ -12,14 +12,14 @@
 
       <dt>Start Time</dt>
       <dd>
-        <%= @event.start_time.strftime('%b %e, %Y') %> @
-        <%= @event.start_time.strftime('%l:%M%P') %>
+        <%= @event.starts_at.strftime('%b %e, %Y') %> @
+        <%= @event.starts_at.strftime('%l:%M%P') %>
       </dd>
 
       <dt>End Time</dt>
       <dd>
-        <%= @event.end_time.strftime('%b %e, %Y') %> @
-        <%= @event.end_time.strftime('%l:%M%P') %>
+        <%= @event.ends_at.strftime('%b %e, %Y') %> @
+        <%= @event.ends_at.strftime('%l:%M%P') %>
       </dd>
 
       <dt>Ticket Face Value</dt>

@@ -17,8 +17,11 @@ group :development do
   gem "pry-rails"
   gem "starter_generators", :git=> 'git://github.com/raghubetina/starter_generators.git'
 end
+
+gem 'chronic'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
